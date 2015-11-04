@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Test</title>
+        <script type="text/javascript" src="../jquery/jquery-1.10.1.js"></script>
+        <script type="text/javascript" src="lib/sizzle.js"></script>
+        <script>
+        </script>
+
+        <style>
+
+        </style>
+    </head>
+    <body id="body">
+        <div>
+            <div id="div">
+                <input name="haha" type="text" />
+                <p class="haha"><span>some text1</span></p>
+                <p class="haha" id="ok">some text2</p>
+                <p class="haha do">some text3</p>
+            </div>
+        </div>
+    </body>
+	<script>
+
+        var div = document.getElementById("div");
+        console.warn("------------------------");
+        console.warn(Sizzle("> p:eq(0)", div));
+	</script>
+</html>
