@@ -26,6 +26,6 @@
 
         var div = document.getElementById("div");
         console.warn("------------------------");
-        console.warn(Sizzle("> p:eq(0)", div));
+        console.warn(Sizzle("> p:not(:eq(0))", div));
 	</script>
 </html>
