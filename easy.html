@@ -5,10 +5,18 @@
         <title>Test</title>
         <script type="text/javascript" src="../jquery/jquery-1.10.1.js"></script>
         <script type="text/javascript" src="lib/sizzle.js"></script>
+        <link type="text/css" src="ggo.css" />
         <script>
         </script>
 
         <style>
+
+            :link {
+                color:red;
+                border:12px solid red;
+                width:100px;
+                height:100px;
+            }
 
         </style>
     </head>
@@ -21,11 +29,21 @@
                 <p class="haha do">some text3</p>
             </div>
         </div>
+        <a>123</a>
+        <a href="http://github.com">456</a>
+        <img src="example.jpg" border="0" usemap="#planetmap" alt="Planets" />
+        <map name="planetmap" id="planetmap">
+            <area shape="circle" coords="180,139,14" href ="venus.html" alt="Venus" />
+            <area shape="circle" coords="129,161,10" href ="mercur.html" alt="Mercury" />
+            <area shape="rect" coords="0,0,110,260" href ="sun.html" alt="Sun" />
+        </map>
     </body>
 	<script>
 
-        var div = document.getElementById("div");
-        console.warn("------------------------");
-        console.warn(Sizzle("> p:not(:eq(0))", div));
+//        var div = document.getElementById("div");
+//        console.warn("------------------------");
+//        console.warn(Sizzle("> p:not(:eq(0))", div));
+
+            console.warn(document.links);
 	</script>
 </html>
