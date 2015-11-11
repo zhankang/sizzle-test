@@ -22,7 +22,7 @@
     </head>
     <body id="body">
         <div>
-            <div id="div">
+            <div id="div" class="test">
                 <input name="haha" type="text" />
                 <p class="haha"><span>some text1</span></p>
                 <p class="haha" id="ok">some text2</p>
@@ -31,19 +31,17 @@
         </div>
         <a>123</a>
         <a href="http://github.com">456</a>
-        <img src="example.jpg" border="0" usemap="#planetmap" alt="Planets" />
-        <map name="planetmap" id="planetmap">
-            <area shape="circle" coords="180,139,14" href ="venus.html" alt="Venus" />
-            <area shape="circle" coords="129,161,10" href ="mercur.html" alt="Mercury" />
-            <area shape="rect" coords="0,0,110,260" href ="sun.html" alt="Sun" />
-        </map>
     </body>
 	<script>
 
-//        var div = document.getElementById("div");
-//        console.warn("------------------------");
-//        console.warn(Sizzle("> p:not(:eq(0))", div));
+        console.warn("------------------------");
+        var s = +new Date();
+        for (var i=0;i<1;i++) {
+            var result = Sizzle("div.test#div[id]")
+        }
+        var t = +new Date();
+        console.warn(t-s);
 
-            console.warn(document.links);
+        console.warn(result);
 	</script>
 </html>
