@@ -22,12 +22,14 @@
     </head>
     <body id="body">
         <div>
-            <div id="div" class="test">
+            <div id="div" class="test" attr="go" name="gogo">
                 <input name="haha" type="text" />
                 <p class="haha"><span>some text1</span></p>
                 <p class="haha" id="ok">some text2</p>
                 <p class="haha do">some text3</p>
             </div>
+            <div id="test#div2">dodood</div>
+            <div class="test#div2" id="div2">dodood</div>
         </div>
         <a>123</a>
         <a href="http://github.com">456</a>
@@ -37,7 +39,7 @@
         console.warn("------------------------");
         var s = +new Date();
         for (var i=0;i<1;i++) {
-            var result = Sizzle("div.test#div[id]")
+            var result = Sizzle("#xxx .haha")
         }
         var t = +new Date();
         console.warn(t-s);
