@@ -36,14 +36,7 @@
     </body>
 	<script>
 
-        console.warn("------------------------");
-        var s = +new Date();
-        for (var i=0;i<1;i++) {
-            var result = Sizzle("#xxx .haha")
-        }
-        var t = +new Date();
-        console.warn(t-s);
-
+        var result = Sizzle(".haha.do");
         console.warn(result);
 	</script>
 </html>
