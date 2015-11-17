@@ -25,18 +25,32 @@
             <div id="div" class="test" attr="go" name="gogo">
                 <input name="haha" type="text" />
                 <p class="haha"><span>some text1</span></p>
-                <p class="haha" id="ok">some text2</p>
-                <p class="haha do">some text3</p>
+                <p class="haha" id="ok" id="ok1">some text2</p>
+                <p class="haha do expert">some text3</p>
             </div>
             <div id="test#div2">dodood</div>
-            <div class="test#div2" id="div2">dodood</div>
+            <div class="test#div2 expert haha" id="div2">dodood</div>
         </div>
         <a>123</a>
         <a href="http://github.com">456</a>
+
+        <h1 id="head1">主题</h1>
+        <ul>
+            <li>明细1.1</li>
+            <li>明细1.2</li>
+        </ul>
+        <ul>
+            <li>明细2.1</li>
+            <li>明细2.2</li>
+        </ul>
     </body>
 	<script>
 
-        var result = Sizzle(".haha.do, #ok");
+        var result = Sizzle("p.haha.do.expert");
         console.warn(result);
 	</script>
+
+    <script>
+        //alert(Sizzle('#head1 ~ ul > li').length);
+    </script>
 </html>
