@@ -20,8 +20,58 @@
     </head>
     <body id="body">
         <p>这个demo文件准备用来最终简化sizzle用的，去掉里面的连接符，伪类，子元素（属性和name再考虑），还有个问题就是是不是需要考虑ie低版本；是否排序，是否去重等等，考虑的情况越多，兼容性则越差，性能越低效。</p>
+        <a name="t1">link</a>
         <div>
-
+            <input name="t1">
+            <div id="T1">
+                <div id="t1">
+                    <span>ddd</span>
+                </div>
+            </div>
+            <div class="t2">2</div>
+            <div class="t3">3</div>
         </div>
+
+        <div class="t1">xxx</div>
+
+        <script>
+
+            var f1 = null, f2;
+
+            // We're going to inject a fake input element with a specified name
+            var form = document.createElement("div"),
+                    id = "script" + (new Date()).getTime(),
+                    root = document.documentElement;
+
+            form.innerHTML = "<a name='" + id + "'/>";
+
+            // Inject it into the root element, check its status, and remove it quickly
+            root.insertBefore( form, root.firstChild );
+
+            // The workaround has to do additional checks after a getElementById
+            // Which slows things down for other browsers (hence the branching)
+            if ( document.getElementById( id ) ) {
+                alert(1);
+                f1 = function( match, context ) {
+                    if ( typeof context.getElementById !== "undefined") {
+                        var m = context.getElementById(match[1]);
+
+                        return m ?
+                                m.id === match[1] || typeof m.getAttributeNode !== "undefined" && m.getAttributeNode("id").nodeValue === match[1] ?
+                                        [m] : undefined :
+                                [];
+                    }
+                };
+            }
+
+            root.removeChild( form );
+
+            // release memory in IE
+            root = form = null;
+
+
+            alert(f1(["", "t1"], document).length);
+
+        </script>
     </body>
 </html>
